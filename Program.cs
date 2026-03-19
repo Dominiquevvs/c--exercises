@@ -17,7 +17,7 @@ while (success == false)
     // numbers 1–6
 
     Console.WriteLine("You rolled: " + dice);
-// The user must roll a 6 to win
+// The user must roll a 6 to win hejdå
     if (dice == 6)
     {
         Console.WriteLine("Congratulations! You rolled a 6!");

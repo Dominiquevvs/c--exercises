@@ -108,18 +108,17 @@ if (passwordOk && emailOk)
 {
     Console.WriteLine("Ett konto har skapats.");
 }
-*/
 
 using System;
-   
+
    // 1. Be användaren mata in en mening
    Console.WriteLine("Write a message that contains at least seven words:");
    string input = Console.ReadLine();
-   
+
    // 2. Dela upp meningen i ord baserat på mellanslag
    // StringSplitOptions.RemoveEmptyEntries gör att extra mellanslag inte räknas som ord
    string[] words = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-   
+
    // 3. Kontrollera om antalet ord är minst sju
    if (words.Length >= 7)
    {
@@ -129,4 +128,20 @@ using System;
    {
        Console.WriteLine("Not a correct sentence");
    }
-   
+*/
+
+using System;
+// 1. Be användaren mata in sitt namn
+Console.Write("Write your name: ");
+string name = Console.ReadLine();
+
+// 2. Kontrollera om namnet börjar med "Lord"
+// Vi använder StringComparison för att vara säkra på att den hittar "Lord" även om man skriver "lord"
+if (name.StartsWith("Lord", StringComparison.OrdinalIgnoreCase))
+{
+    Console.WriteLine("Welcome Your Excellency");
+}
+else
+{
+    Console.WriteLine($"Welcome {name}");
+}

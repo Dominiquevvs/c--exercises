@@ -52,7 +52,7 @@ else
 {
     Console.WriteLine("Unable to decide preference");
 }
-*/
+
 
 Console.WriteLine("Wrtie some text");
 string input = Console.ReadLine();
@@ -76,3 +76,35 @@ if (badWord)
 else
 {
     Console.WriteLine("Proceed successfully");}
+
+*/
+using System;
+// 1. Be om lösenord
+Console.Write("Write your password: ");
+string password = Console.ReadLine();
+
+// 2. Be om e-mail
+Console.Write("Write your emailadress: ");
+string email = Console.ReadLine();
+
+// 3. Kontrollera kraven
+bool passwordOk = password.Length >= 7;
+bool emailOk = email.EndsWith(".se") || email.EndsWith(".com");
+
+// 4. Ge feedback till användaren
+
+if (!passwordOk)
+{
+    Console.WriteLine("The password needs to be seven letters or more.");
+}
+
+if (!emailOk)
+{
+    Console.WriteLine("E-postadressen måste vara av typen .se eller .com.");
+}
+
+// 5. Om allt är rätt
+if (passwordOk && emailOk)
+{
+    Console.WriteLine("Ett konto har skapats.");
+}

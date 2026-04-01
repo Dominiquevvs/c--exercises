@@ -165,7 +165,7 @@ for (int i = 0; i < accountBalances.Length; i++)
 
 // 4. Skriv ut det totala beloppet till konsolen
 Console.WriteLine(totalAmount);
-*/
+
 
 using System;
 
@@ -191,3 +191,28 @@ else
 {
     Console.WriteLine("You havent written any text!");
 }
+*/
+using System;
+
+// 1. Fråga användaren om input
+Console.WriteLine("Write some text:");
+string input = Console.ReadLine();
+
+// 2. Splitta texten in till två ord
+string[] words = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+// 3. Loopa genom orden och se hur långt det ör
+for (int i = 0; i < words.Length; i++)
+{
+    // Titta om ordet har mer än 6 bokstäver.
+    if (words[i].Length > 6)
+    {
+        // Lägg till det "långa ordet" till det nurvarande ordet.
+        words[i] = words[i] + " (long word)";
+    }
+}
+
+// 4. Lägg ihop orden tillsammans och visa på skärmen.
+string result = string.Join(" ", words);
+Console.WriteLine("\nResultat:");
+Console.WriteLine(result);

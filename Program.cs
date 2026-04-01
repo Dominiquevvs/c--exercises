@@ -128,7 +128,6 @@ using System;
    {
        Console.WriteLine("Not a correct sentence");
    }
-*/
 
 using System;
 // 1. Be användaren mata in sitt namn
@@ -145,3 +144,24 @@ else
 {
     Console.WriteLine($"Welcome {name}");
 }
+*/
+
+using System;
+
+// 1. Skapa arrayen med kontobalanserna
+int[] accountBalances = { 5506, 291, 500, 482, 963 };
+
+// 2. Skapa en variabel för att hålla totalsumman (börja på 0)
+int totalAmount = 0;
+
+// 3. Använd en for-loop för att gå igenom arrayen
+// Vi använder .Length för att loopen ska veta hur många gånger den ska köra
+for (int i = 0; i < accountBalances.Length; i++)
+{
+    // Addera det aktuella värdet till totalAmount
+    // += är ett kortare sätt att skriva: totalAmount = totalAmount + accountBalances[i]
+    totalAmount += accountBalances[i];
+}
+
+// 4. Skriv ut det totala beloppet till konsolen
+Console.WriteLine(totalAmount);

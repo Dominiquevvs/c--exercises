@@ -191,7 +191,7 @@ else
 {
     Console.WriteLine("You havent written any text!");
 }
-*/
+
 using System;
 
 // 1. Fråga användaren om input
@@ -216,3 +216,30 @@ for (int i = 0; i < words.Length; i++)
 string result = string.Join(" ", words);
 Console.WriteLine("\nResultat:");
 Console.WriteLine(result);
+*/
+using System;
+
+// 1. Få in text ifrån användaren
+Console.WriteLine("Write your own text:");
+string input = Console.ReadLine();
+
+if (!string.IsNullOrWhiteSpace(input))
+{
+    // 2. Dela in till två ord
+    string[] words = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+    Console.WriteLine("\nResult:\n");
+
+    // 3. Yttre loop: Iterera genom varje ord
+    foreach (string word in words)
+    {
+        // 4. Inre loop: Skriv ut ordet ordlängd gånger
+        for (int i = 0; i < word.Length; i++)
+        {
+            Console.Write(word + " ");
+        }
+        
+        // 5. Flytta till en ny rad efter att repetitionerna är klara
+        Console.WriteLine();
+    }
+}

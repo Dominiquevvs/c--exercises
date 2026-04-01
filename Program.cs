@@ -144,7 +144,7 @@ else
 {
     Console.WriteLine($"Welcome {name}");
 }
-*/
+
 
 using System;
 
@@ -165,3 +165,29 @@ for (int i = 0; i < accountBalances.Length; i++)
 
 // 4. Skriv ut det totala beloppet till konsolen
 Console.WriteLine(totalAmount);
+*/
+
+using System;
+
+Console.WriteLine("Write some text:");
+string input = Console.ReadLine();
+
+// We check if input is null to avoid errors
+if (!string.IsNullOrWhiteSpace(input))
+{
+    string[] words = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+    for (int i = 0; i < words.Length; i++)
+    {
+        // Ternary operator: (condition) ? true : false
+        words[i] = (i % 2 == 0) ? words[i].ToUpper() : words[i].ToLower();
+    }
+
+    string result = string.Join(" ", words);
+    Console.WriteLine("\nResult:");
+    Console.WriteLine(result);
+}
+else
+{
+    Console.WriteLine("You havent written any text!");
+}

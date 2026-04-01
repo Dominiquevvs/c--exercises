@@ -77,7 +77,7 @@ else
 {
     Console.WriteLine("Proceed successfully");}
 
-*/
+
 using System;
 // 1. Be om lösenord
 Console.Write("Write your password: ");
@@ -108,3 +108,25 @@ if (passwordOk && emailOk)
 {
     Console.WriteLine("Ett konto har skapats.");
 }
+*/
+
+using System;
+   
+   // 1. Be användaren mata in en mening
+   Console.WriteLine("Write a message that contains at least seven words:");
+   string input = Console.ReadLine();
+   
+   // 2. Dela upp meningen i ord baserat på mellanslag
+   // StringSplitOptions.RemoveEmptyEntries gör att extra mellanslag inte räknas som ord
+   string[] words = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+   
+   // 3. Kontrollera om antalet ord är minst sju
+   if (words.Length >= 7)
+   {
+       Console.WriteLine("Sentence accepted");
+   }
+   else
+   {
+       Console.WriteLine("Not a correct sentence");
+   }
+   

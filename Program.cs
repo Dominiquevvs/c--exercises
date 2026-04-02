@@ -238,12 +238,12 @@ if (!string.IsNullOrWhiteSpace(input))
         {
             Console.Write(word + " ");
         }
-        
+
         // 5. Flytta till en ny rad efter att repetitionerna är klara
         Console.WriteLine();
     }
 }
-*/
+
 
 using System;
 
@@ -307,7 +307,7 @@ class Program
             else
             {
                 // Vi får tillbaka insatsen + vinst (totalt insatsen * 2)
-                credits += bet; 
+                credits += bet;
                 Console.WriteLine($"Good job! You won {bet} credits.");
             }
         }
@@ -316,7 +316,57 @@ class Program
         Console.WriteLine("\n--- Game over ---");
         if (lives <= 0) Console.WriteLine("You ran out of lives!");
         if (credits <= 0) Console.WriteLine("You ran out of money!");
-        
+
         Console.WriteLine($"Your final score was: {credits} credits.");
+    }
+}
+*/
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("--- WELCOME TO THE COFFEESHOP ---");
+        Console.WriteLine("Choose your coffee sort from the menu:");
+        Console.WriteLine("1. Brewed coffee (25 kr)");
+        Console.WriteLine("2. Cappuccino (40 kr)");
+        Console.WriteLine("3. Café au lait (45 kr)");
+        Console.WriteLine("4. Ice coffee (35 kr)");
+        Console.WriteLine("----------------------------------");
+
+        Console.Write("Your choice (number): ");
+        string choice = Console.ReadLine();
+
+        // ToLower()
+        switch (choice.ToLower())
+        {
+            case "1":
+            case "Brewed coffee":
+                Console.WriteLine("You have selected brewed coffee. It will be 25kr ");
+                break;
+
+            case "2":
+            case "cappuccino":
+                Console.WriteLine("You have selected one creamy Cappuccino. That will be 40 kr.");
+                break;
+
+            case "3":
+            case "latte":
+                Console.WriteLine("You have selected one Big Café au lait. That will be 45 kr.");
+                break;
+
+            case "4":
+            case "iskaffe":
+                Console.WriteLine("You have chosen a refreshing Iced Coffee. That will be 35 kr.");
+                break;
+
+            default:
+                Console.WriteLine("Unfortunately, that option is not on the menu.");
+                break;
+        }
+
+        Console.WriteLine("Thank you for your visit! Come again!");
     }
 }

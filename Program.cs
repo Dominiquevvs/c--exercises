@@ -320,7 +320,7 @@ class Program
         Console.WriteLine($"Your final score was: {credits} credits.");
     }
 }
-*/
+
 
 using System;
 
@@ -368,5 +368,66 @@ class Program
         }
 
         Console.WriteLine("Thank you for your visit! Come again!");
+    }
+}
+*/
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Variabel för att hålla koll på priset
+        int price = 0;
+        string orderName = "";
+
+        Console.WriteLine("BARISTA TERMINAL v1.0");
+        Console.Write("Enter product code or name: ");
+        
+        // Läser in valet och gör om till små bokstäver
+        string input = Console.ReadLine().ToLower().Trim();
+
+        // Switch-satsen hanterar de olika kaffesorterna
+        switch (input)
+        {
+            case "b":
+            case "1":
+            case "bre":
+                orderName = "Brewed Coffee";
+                price = 25;
+                break;
+
+            case "c":
+            case "2":
+            case "cap":
+                orderName = "Cappuccino";
+                price = 40;
+                break;
+
+            case "l":
+            case "3":
+            case "latte":
+                orderName = "Latte";
+                price = 45;
+                break;
+
+            case "i":
+            case "4":
+            case "icecoffee":
+                orderName = "Icecoffee";
+                price = 35;
+                break;
+
+            default:
+                Console.WriteLine("Error: Unknown Product");
+                return; // Avslutar programmet om produkten inte finns
+        }
+
+        // Ger tillbaka resultatet till baristan
+        Console.WriteLine("-----------------------");
+        Console.WriteLine($"Order: {orderName}");
+        Console.WriteLine($"Total: {price} kr");
+        Console.WriteLine("-----------------------");
     }
 }

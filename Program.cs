@@ -216,7 +216,7 @@ for (int i = 0; i < words.Length; i++)
 string result = string.Join(" ", words);
 Console.WriteLine("\nResultat:");
 Console.WriteLine(result);
-*/
+
 using System;
 
 // 1. Få in text ifrån användaren
@@ -241,5 +241,82 @@ if (!string.IsNullOrWhiteSpace(input))
         
         // 5. Flytta till en ny rad efter att repetitionerna är klara
         Console.WriteLine();
+    }
+}
+*/
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Startvärden
+        Random randomizer = new Random();
+        int credits = 100;
+        int lives = 3;
+
+        Console.WriteLine("Welcome to the dice game!");
+        Console.WriteLine("You have 100 credits and 3 lives. All luck to you!!");
+
+        // Huvudloop: Körs så länge vi har liv kvar och pengar kvar
+        while (lives > 0 && credits > 0)
+        {
+            Console.WriteLine($"\nSaldo: {credits} | Lives: {lives}");
+            int bet = 0;
+            bool validBet = false;
+
+            // Loop för att få ett korrekt bet (10, 30 eller 50)
+            while (!validBet)
+            {
+                Console.Write("How much do you want to bet? (10, 30, 50): ");
+                string input = Console.ReadLine();
+
+                if (input == "10" || input == "30" || input == "50")
+                {
+                    bet = int.Parse(input);
+
+                    // Kontrollera att man inte satsar mer än man har
+                    if (bet <= credits)
+                    {
+                        validBet = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You dont have enough credits for that bet!");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Unfounded selection. Please select 10, 30, or 50.");
+                }
+            }
+
+            // 1a. Slå tärningen (1-6)
+            int roll = randomizer.Next(1, 7); // 1 till och med 6
+            Console.WriteLine($"You hit one: {roll}");
+
+            // 1b, 1g. Om tärningen är 1 eller 2 (Förlust)
+            if (roll == 1 || roll == 2)
+            {
+                lives--;       // Minska liv
+                credits -= bet; // Förlorar insatsen
+                Console.WriteLine("Bummer! You lost your lives and credits");
+            }
+            // Om tärningen är 3 till 6 (Vinst)
+            else
+            {
+                // Vi får tillbaka insatsen + vinst (totalt insatsen * 2)
+                credits += bet; 
+                Console.WriteLine($"Good job! You won {bet} credits.");
+            }
+        }
+
+        // Slutresultat när loopen avslutats
+        Console.WriteLine("\n--- Game over ---");
+        if (lives <= 0) Console.WriteLine("You ran out of lives!");
+        if (credits <= 0) Console.WriteLine("You ran out of money!");
+        
+        Console.WriteLine($"Your final score was: {credits} credits.");
     }
 }

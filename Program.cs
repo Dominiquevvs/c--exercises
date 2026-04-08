@@ -370,7 +370,6 @@ class Program
         Console.WriteLine("Thank you for your visit! Come again!");
     }
 }
-*/
 
 using System;
 
@@ -384,7 +383,7 @@ class Program
 
         Console.WriteLine("BARISTA TERMINAL v1.0");
         Console.Write("Enter product code or name: ");
-        
+
         // Läser in valet och gör om till små bokstäver
         string input = Console.ReadLine().ToLower().Trim();
 
@@ -431,3 +430,67 @@ class Program
         Console.WriteLine("-----------------------");
     }
 }
+
+List<string> coffeeMenu = new List<string> { "Espresso", "Latte", "Cappuccino", "Americano" };
+
+Console.WriteLine("--- Coffee Menu ---");
+
+for (int i = 0; i < coffeeMenu.Count; i++)
+{
+    // 'a' + 0 = 'a', 'a' + 1 = 'b', etc.
+    char letter = (char)('a' + i);
+    Console.WriteLine($"{letter}) {coffeeMenu[i]}");
+}
+
+Console.Write("\nPlease enter your choice: ");
+string input = Console.ReadLine().ToLower();
+*/
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // 1. Display the Menu
+        Console.WriteLine("Welcome to the Coffee Shop!");
+        Console.WriteLine("---------------------------");
+        Console.WriteLine("1. Espresso");
+        Console.WriteLine("2. Latte");
+        Console.WriteLine("3. Americano");
+        Console.WriteLine("---------------------------");
+        Console.WriteLine("4. Extra Sugar");
+        Console.WriteLine("5. Additional Cream");
+        Console.WriteLine("6. Oat Milk");
+        
+        Console.Write("\nEnter the number of your choice: ");
+        
+        // 2. Get the user's number
+        string input = Console.ReadLine();
+
+        // 3. Simple if/else logic
+        if (input == "1") {
+            Console.WriteLine("You selected: Espresso");
+        }
+        else if (input == "2") {
+            Console.WriteLine("You selected: Latte");
+        }
+        else if (input == "3") {
+            Console.WriteLine("You selected: Americano");
+        }
+        else if (input == "4") {
+            Console.WriteLine("Added: Extra Sugar");
+        }
+        else if (input == "5") {
+            Console.WriteLine("Added: Additional Cream");
+        }
+        else if (input == "6") {
+            Console.WriteLine("Added: Oat Milk");
+        }
+        else {
+            Console.WriteLine("Error: That number is not on the menu.");
+        }
+    }
+}
+
+

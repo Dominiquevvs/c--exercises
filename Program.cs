@@ -444,7 +444,7 @@ for (int i = 0; i < coffeeMenu.Count; i++)
 
 Console.Write("\nPlease enter your choice: ");
 string input = Console.ReadLine().ToLower();
-*/
+
 
 using System;
 
@@ -462,9 +462,9 @@ class Program
         Console.WriteLine("4. Extra Sugar");
         Console.WriteLine("5. Additional Cream");
         Console.WriteLine("6. Oat Milk");
-        
+
         Console.Write("\nEnter the number of your choice: ");
-        
+
         // 2. Get the user's number
         string input = Console.ReadLine();
 
@@ -492,5 +492,56 @@ class Program
         }
     }
 }
+*/
 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // 1. Visar användaren the "Cheat Sheet"
+        Console.WriteLine("MENU: a=Espresso, b=Latte, c=Americano");
+        Console.WriteLine("EXTRAS: d=Sugar, e=Cream, f=Oat Milk");
+        Console.WriteLine("---------------------------------------");
+        
+        // 2. Hämta kodsträng
+        Console.Write("Enter your codes (e.g., 'ae'): ");
+        string input = Console.ReadLine().ToLower();
+
+        Console.WriteLine("\nProcessing your order...");
+
+        // 3. Loopen: Denna slinga tittar på varje bokstav i strängen en efter en
+        foreach (char code in input)
+        {
+            // Vi använder en brytare för att avgöra vad varje bokstav betyder
+            switch (code)
+            {
+                case 'a':
+                    Console.WriteLine("- Espresso");
+                    break;
+                case 'b':
+                    Console.WriteLine("- Latte");
+                    break;
+                case 'c':
+                    Console.WriteLine("- Americano");
+                    break;
+                case 'd':
+                    Console.WriteLine("- Added: Extra Sugar");
+                    break;
+                case 'e':
+                    Console.WriteLine("- Added: Additional Cream");
+                    break;
+                case 'f':
+                    Console.WriteLine("- Added: Oat Milk");
+                    break;
+                default:
+                    Console.WriteLine($"- '{code}' is not a valid menu letter.");
+                    break;
+            }
+        }
+
+        Console.WriteLine("\nOrder Complete!");
+    }
+}
 

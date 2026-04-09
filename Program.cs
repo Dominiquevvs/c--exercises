@@ -492,7 +492,7 @@ class Program
         }
     }
 }
-*/
+
 
 using System;
 
@@ -504,7 +504,7 @@ class Program
         Console.WriteLine("MENU: a=Espresso, b=Latte, c=Americano");
         Console.WriteLine("EXTRAS: d=Sugar, e=Cream, f=Oat Milk");
         Console.WriteLine("---------------------------------------");
-        
+
         // 2. Hämta kodsträng
         Console.Write("Enter your codes (e.g., 'ae'): ");
         string input = Console.ReadLine().ToLower();
@@ -544,4 +544,32 @@ class Program
         Console.WriteLine("\nOrder Complete!");
     }
 }
+*/
+// 1. Skapa din Dictionary (listan med regler)
+var coffeeSizes = new Dictionary<string, List<int>>
+{
+    { "Latte", new List<int> { 200, 350, 500 } },
+    { "Espresso", new List<int> { 100, 200 } }
+};
 
+// 2. Fråga användaren (Här skapas variabeln!)
+Console.WriteLine("Which coffee do you want? (Latte/Espresso)");
+string selectedCoffee = Console.ReadLine(); // Nu finns "selectedCoffee"!
+
+// 3. Kontrollera om kaffet finns i din lista överhuvudtaget
+if (coffeeSizes.ContainsKey(selectedCoffee))
+{
+    // 4. Kolla om just 350ml finns för detta kaffe
+    if (coffeeSizes[selectedCoffee].Contains(350))
+    {
+        Console.WriteLine("350ml is availble!");
+    }
+    else
+    {
+        Console.WriteLine($"Sorry, {selectedCoffee} is not served 350ml.");
+    }
+}
+else
+{
+    Console.WriteLine("That coffee is not on the menu.");
+}

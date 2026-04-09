@@ -544,7 +544,7 @@ class Program
         Console.WriteLine("\nOrder Complete!");
     }
 }
-*/
+
 // 1. Skapa din Dictionary (listan med regler)
 var coffeeSizes = new Dictionary<string, List<int>>
 {
@@ -573,3 +573,20 @@ else
 {
     Console.WriteLine("That coffee is not on the menu.");
 }
+*/
+
+// 1. Variabler för att hålla koll på valet
+string selectedCoffee = "Cappuccino"; // Denna får du från användarens input
+int selectedSize = 250;
+string topping = "Additional Syrup Topping";
+double basePrice = 3.50; // Pris för kaffet
+double toppingPrice = 0.50; // Pris för topping
+double totalPrice = basePrice + toppingPrice;
+
+// 2. Skapa orderbeskrivningen (Order Description)
+// Vi använder $"" (String Interpolation) för att enkelt baka in variabler i texten
+string orderSummary = $"{selectedCoffee} {selectedSize}ml, {topping}, {totalPrice:F2}.";
+
+// 3. Skriv ut till användaren
+Console.WriteLine("--- Order Receipt ---");
+Console.WriteLine(orderSummary);

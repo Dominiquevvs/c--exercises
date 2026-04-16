@@ -1,4 +1,5 @@
-﻿/*
+﻿using System;
+/*
 // 1. Ask the user for the instrument
 Console.WriteLine("Please enter the name of a music instrument:");
 
@@ -573,7 +574,7 @@ else
 {
     Console.WriteLine("That coffee is not on the menu.");
 }
-*/
+
 
 // 1. Variabler för att hålla koll på valet
 string selectedCoffee = "Cappuccino"; // Denna får du från användarens input
@@ -590,3 +591,26 @@ string orderSummary = $"{selectedCoffee} {selectedSize}ml, {topping}, {totalPric
 // 3. Skriv ut till användaren
 Console.WriteLine("--- Order Receipt ---");
 Console.WriteLine(orderSummary);
+
+*/ 
+
+// Här anropas metoden på samma ställe där koden var förut
+CheckPassword();
+
+
+void CheckPassword()
+{
+    Console.WriteLine("Enter your password:");
+    string password = Console.ReadLine();
+
+    bool passwordMatch = password.ToLower() == "pencil";
+
+    if (passwordMatch)
+    {
+        Console.WriteLine("Success");
+    }
+    else
+    {
+        Console.WriteLine("Login failed");
+    }
+}

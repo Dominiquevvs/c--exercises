@@ -592,8 +592,6 @@ string orderSummary = $"{selectedCoffee} {selectedSize}ml, {topping}, {totalPric
 Console.WriteLine("--- Order Receipt ---");
 Console.WriteLine(orderSummary);
 
-*/
-
 CheckPassword();
 
 void CheckPassword()
@@ -602,6 +600,50 @@ void CheckPassword()
     string password = Console.ReadLine();
 
     bool passwordMatch = password.ToLower() == "pencil";
+
+    if (passwordMatch)
+    {
+        Console.WriteLine("Success");
+    }
+    else
+    {
+        Console.WriteLine("Login failed");
+    }
+}
+*/
+
+// Listan med användare (username, password)
+string[][] users = [["john", "plate"], ["michelle", "bike"], ["lisa", "pencil"]];
+
+LoginUser(users);
+
+void LoginUser(string[][] userList)
+{
+    Console.WriteLine("Enter your username:");
+    string username = Console.ReadLine();
+
+    Console.WriteLine("Enter your password:");
+    string password = Console.ReadLine();
+
+    int userMatch = -1;
+
+    // Loopa igenom listan
+    for (int i = 0; i < userList.Length; i++)
+    {
+        if (userList[i][0] == username.ToLower())
+        {
+            userMatch = i;
+            break;
+        }
+    }
+
+    bool passwordMatch = false;
+
+    // Om användaren hittades, kontrollera lösenordet
+    if (userMatch > -1)
+    {
+        passwordMatch = password.ToLower() == userList[userMatch][1];
+    }
 
     if (passwordMatch)
     {

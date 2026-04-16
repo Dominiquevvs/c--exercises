@@ -592,11 +592,9 @@ string orderSummary = $"{selectedCoffee} {selectedSize}ml, {topping}, {totalPric
 Console.WriteLine("--- Order Receipt ---");
 Console.WriteLine(orderSummary);
 
-*/ 
+*/
 
-// Här anropas metoden på samma ställe där koden var förut
 CheckPassword();
-
 
 void CheckPassword()
 {

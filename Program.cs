@@ -592,6 +592,7 @@ string orderSummary = $"{selectedCoffee} {selectedSize}ml, {topping}, {totalPric
 Console.WriteLine("--- Order Receipt ---");
 Console.WriteLine(orderSummary);
 
+*/
 CheckPassword();
 
 void CheckPassword()
@@ -610,7 +611,7 @@ void CheckPassword()
         Console.WriteLine("Login failed");
     }
 }
-*/
+
 
 // Listan med användare (username, password)
 string[][] users = [["john", "plate"], ["michelle", "bike"], ["lisa", "pencil"]];
@@ -639,6 +640,7 @@ void LoginUser(string[][] userList)
 
     bool passwordMatch = false;
 
+
     // Om användaren hittades, kontrollera lösenordet
     if (userMatch > -1)
     {
@@ -654,3 +656,4 @@ void LoginUser(string[][] userList)
         Console.WriteLine("Login failed");
     }
 }
+

@@ -592,7 +592,6 @@ string orderSummary = $"{selectedCoffee} {selectedSize}ml, {topping}, {totalPric
 Console.WriteLine("--- Order Receipt ---");
 Console.WriteLine(orderSummary);
 
-*/
 CheckPassword();
 
 void CheckPassword()
@@ -656,4 +655,25 @@ void LoginUser(string[][] userList)
         Console.WriteLine("Login failed");
     }
 }
+*/
+string[] nameArray =
+{
+    "Emma", "Tom", "Benjamin", "Elina"
 
+};
+int longestLength = GetLongestStringLength(nameArray);
+Console.WriteLine("The longest word has this many letters: " + longestLength);
+int GetLongestStringLength(string[] words)
+{
+    int maxLength = 0;
+    foreach (var word in words)
+    {
+        if (word.Length > maxLength)
+        {
+            maxLength = word.Length;
+
+        }
+    }
+
+    return maxLength;
+}

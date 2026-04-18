@@ -655,7 +655,7 @@ void LoginUser(string[][] userList)
         Console.WriteLine("Login failed");
     }
 }
-*/
+
 string[] nameArray =
 {
     "Emma", "Tom", "Benjamin", "Elina"
@@ -677,3 +677,22 @@ int GetLongestStringLength(string[] words)
 
     return maxLength;
 }
+*/
+
+bool IsSumGreater(int num1, int num2, int num3)
+{
+    int sum = num1 + num2;
+
+    if (sum > num3)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+bool result1 = IsSumGreater(4,4,6);
+Console.WriteLine(result1);
+bool result2 = IsSumGreater(1,1,3);
+Console.WriteLine(result2);

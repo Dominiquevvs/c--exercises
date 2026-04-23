@@ -1,29 +1,27 @@
-namespace c__exercises;
-
-public partial class Employee;
-class Program
-{
-    static void Main(string[] args)
+public class Employee
+{    
+    private decimal salary;
+    public Employee(decimal salary)
     {
-        // 1. Skapa objektet
-        Employee currentEmployee = new Employee();
-
-        // 2. Anropa metoden (Viktigt med radbrytning här!)
-        decimal skatt = currentEmployee.IncomeTax();
-
-        // 3. Skriv ut
-        Console.WriteLine($"Inkomstskatten är: {skatt} kr");
-        
-        // Håller fönstret öppet så du hinner se resultatet
-        Console.ReadLine();
+        this.salary = salary;
     }
-}
-
-// Din Employee-klass kan ligga här under
-public partial class Employee
-{
+    public Employee()
+    {
+        this.salary = 30000m;
+    }
+   
     public decimal IncomeTax()
     {
-        return 5000.50m;
+
+   
+        int vacationDays = VacationDays();
+        decimal tax = this.salary * 0.3m * (20- vacationDays);
+        return tax;
     }
+    public double CalculateBonus(double salary) 
+    {
+        return salary * 0.1; // 10% bonus
+    }
+
+    private int VacationDays() => 21;
 }

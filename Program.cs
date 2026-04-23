@@ -677,7 +677,7 @@ int GetLongestStringLength(string[] words)
 
     return maxLength;
 }
-*/
+
 
 bool IsSumGreater(int num1, int num2, int num3)
 {
@@ -696,3 +696,17 @@ bool result1 = IsSumGreater(4,4,6);
 Console.WriteLine(result1);
 bool result2 = IsSumGreater(1,1,3);
 Console.WriteLine(result2);
+*/
+class Program
+{
+    static void Main()
+    {
+        
+        Employee empA = new Employee(40000m);
+        Console.WriteLine($"Employee A Tax 40k salary: {empA.IncomeTax()}");
+        Employee empB = new Employee(60000m);
+        Console.WriteLine($"Employee B Tax 60k salary: {empB.IncomeTax()}");
+        
+        // int days = currentEmployee.VacationDays();
+    }
+}

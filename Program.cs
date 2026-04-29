@@ -710,7 +710,7 @@ class Program
         // int days = currentEmployee.VacationDays();
     }
 }
-*/
+
 
 using System;
    using System.Collections.Generic; // Krävs för att kunna använda List
@@ -741,4 +741,46 @@ using System;
            }
        }
    }
+*/
+using System;
+using System.Collections.Generic;
 
+namespace ToolApp
+{
+    // 1. Skapa klassen Tool med egenskaperna Brand och Name
+    public class Tool
+    {
+        public string Brand { get; set; }
+        public string Name { get; set; }
+
+        public Tool(string brand, string name)
+        {
+            Brand = brand;
+            Name = name;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 2. Skapa en ny lista av typen Tool
+            List<Tool> myTools = new List<Tool>();
+
+            // 3. Lägg till tre objektinstanser i listan
+            myTools.Add(new Tool("Bosch", "Borrhammare"));
+            myTools.Add(new Tool("Makita", "Skruvdragare")); // Index 1
+            myTools.Add(new Tool("Dewalt", "Cirkelsåg"));
+
+            // 4. Ta bort det andra objektet i listan (vid index 1)
+            myTools.RemoveAt(1);
+
+            // 5. Använd en foreach-loop för att skriva ut Brand för varje objekt
+            Console.WriteLine("Märken i listan just nu:");
+            foreach (Tool t in myTools)
+            {
+                Console.WriteLine(t.Brand);
+            }
+        }
+    }
+}

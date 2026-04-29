@@ -696,7 +696,7 @@ bool result1 = IsSumGreater(4,4,6);
 Console.WriteLine(result1);
 bool result2 = IsSumGreater(1,1,3);
 Console.WriteLine(result2);
-*/
+
 class Program
 {
     static void Main()
@@ -710,3 +710,35 @@ class Program
         // int days = currentEmployee.VacationDays();
     }
 }
+*/
+
+using System;
+   using System.Collections.Generic; // Krävs för att kunna använda List
+   
+   class Program
+   {
+       static void Main(string[] args)
+       {
+           // 1. Skapa en List av typen string
+           List<string> animals = new List<string>();
+   
+           // 2. Lägg till 4 olika strängvärden
+           animals.Add("Zebra");
+           animals.Add("Apa");
+           animals.Add("Elefant");
+           animals.Add("Delfin");
+   
+           // 3. Sortera listan i alfabetisk ordning
+           // Sort() ändrar ordningen direkt i den befintliga listan
+           animals.Sort();
+   
+           // 4. Använd en foreach-loop för att skriva ut värdena till konsolen
+           Console.WriteLine("Sorterad lista på djur:");
+           
+           foreach (string animal in animals)
+           {
+               Console.WriteLine("- " + animal);
+           }
+       }
+   }
+

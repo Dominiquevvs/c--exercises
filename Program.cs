@@ -741,7 +741,7 @@ using System;
            }
        }
    }
-*/
+
 
 namespace ToolApp
 {
@@ -783,3 +783,33 @@ namespace ToolApp
     }
 }
 
+*/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace MyExercise
+{
+    class Program 
+    {
+        static void Main(string[] args) 
+        {
+            List<Item> items = new List<Item>();
+            items.Add(new Item("Apple", "iPhone 15"));
+            items.Add(new Item("Sony", "PlayStation 5"));
+
+            string searchName = "iPhone 15";
+            var foundItem = items.FirstOrDefault(i => i.Name == searchName);
+
+            if (foundItem != null)
+                Console.WriteLine($"Brand: {foundItem.Brand}, Name: {foundItem.Name}");
+        }
+    }
+
+    public class Item
+    {
+        public string Brand { get; set; }
+        public string Name { get; set; }
+        public Item(string brand, string name) { Brand = brand; Name = name; }
+    }
+}

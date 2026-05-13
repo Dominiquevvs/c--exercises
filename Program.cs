@@ -819,7 +819,6 @@ List<string> frukter = new List<string> { "Banan", "Äpple" };
 // Provocera fel: Det finns inget index 5
 Console.WriteLine(frukter[5]);
 
-*/
 
 Console.WriteLine("Vänligen skriv in ett heltal:");
 
@@ -840,3 +839,28 @@ catch (Exception ex)
 }
 
 Console.WriteLine("Programmet har körts klart utan att krascha.");
+*/
+try
+{
+    Console.WriteLine("Ange täljaren (numret som ska delas):");
+    int tal1 = int.Parse(Console.ReadLine());
+
+    Console.WriteLine("Ange nämnaren (numret du delar med, testa att skriva 0):");
+    int tal2 = int.Parse(Console.ReadLine());
+
+   
+    int resultat = tal1 / tal2;
+
+    Console.WriteLine($"Resultatet blev: {resultat}");
+}
+catch (DivideByZeroException ex)
+{
+  
+    Console.WriteLine("Fel: Du kan inte dela ett tal med noll!");
+    Console.WriteLine("Systemets meddelande: " + ex.Message);
+}
+catch (FormatException)
+{
+    
+    Console.WriteLine("Fel: Du måste mata in giltiga siffror.");
+}

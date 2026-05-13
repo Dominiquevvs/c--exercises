@@ -783,7 +783,6 @@ namespace ToolApp
     }
 }
 
-*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -813,3 +812,10 @@ namespace MyExercise
         public Item(string brand, string name) { Brand = brand; Name = name; }
     }
 }
+*/
+
+List<string> frukter = new List<string> { "Banan", "Äpple" };
+
+// Provocera fel: Det finns inget index 5
+Console.WriteLine(frukter[5]);
+

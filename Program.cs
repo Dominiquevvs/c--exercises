@@ -839,7 +839,7 @@ catch (Exception ex)
 }
 
 Console.WriteLine("Programmet har körts klart utan att krascha.");
-*/
+
 try
 {
     Console.WriteLine("Ange täljaren (numret som ska delas):");
@@ -863,4 +863,33 @@ catch (FormatException)
 {
     
     Console.WriteLine("Fel: Du måste mata in giltiga siffror.");
+}
+*/
+try
+{
+    // Skapa en array med endast TVÅ element
+
+    int[] siffror = { 10, 2 }; 
+
+    Console.WriteLine("Försöker hämta tal från arrayen...");
+
+   
+    int tal1 = siffror[1]; 
+    int tal2 = siffror[2]; 
+
+    // Denna rad kommer aldrig köras eftersom raden ovan kraschar
+    int resultat = tal1 / tal2;
+    Console.WriteLine($"Resultatet blev: {resultat}");
+}
+// Fånga felet
+catch (IndexOutOfRangeException ex)
+{
+    Console.WriteLine("Fel: Du försökte komma åt ett index som inte finns i arrayen.");
+    Console.WriteLine("Meddelande: " + ex.Message);
+}
+
+catch (DivideByZeroException ex)
+{
+    Console.WriteLine("Fel: Kan inte dela med noll.");
+    Console.WriteLine("Meddelande: " + ex.Message);
 }

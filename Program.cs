@@ -812,10 +812,31 @@ namespace MyExercise
         public Item(string brand, string name) { Brand = brand; Name = name; }
     }
 }
-*/
+
 
 List<string> frukter = new List<string> { "Banan", "Äpple" };
 
 // Provocera fel: Det finns inget index 5
 Console.WriteLine(frukter[5]);
 
+*/
+
+Console.WriteLine("Vänligen skriv in ett heltal:");
+
+try
+{
+    // Vi försöker läsa in texten och omvandla den till en int
+    string input = Console.ReadLine();
+    int siffra = int.Parse(input);
+
+    // Om det lyckas körs denna rad:
+    Console.WriteLine($"Snyggt! Du skrev siffran: {siffra}");
+}
+catch (Exception ex) 
+{
+    // Om int.Parse misslyckas hamnar vi här istället för att programmet dör
+    Console.WriteLine("Något gick fel!");
+    Console.WriteLine("Felmeddelande: " + ex.Message);
+}
+
+Console.WriteLine("Programmet har körts klart utan att krascha.");
